@@ -1,8 +1,5 @@
-<script setup lang="ts">
+<script setup>
 import HelloWorld from './components/HelloWorld.vue'
-const test = ()=>{
-  console.log(1111)
-}
 </script>
 
 <template>
@@ -14,7 +11,7 @@ const test = ()=>{
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld class="test" @test="test" msg="Vite + Vue" />
+  <HelloWorld msg="Vite + Vue" />
 </template>
 
 <style scoped>
@@ -29,8 +26,5 @@ const test = ()=>{
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
-}
-.test{
-  background: red;
 }
 </style>

@@ -1,28 +1,40 @@
-<script setup lang="ts">
-import { ref, useAttrs } from 'vue'
+<script setup>
+import { ref } from 'vue'
 
-//设置这个就不会默认把透传属性默认到根标签上了
-defineOptions({
-  inheritAttrs: false
+defineProps({
+  msg: String,
 })
 
-const attrs = useAttrs()
-
-defineProps<{ msg: string }>()
-
-// const emit = defineEmits([ "doSth" ]);
-
 const count = ref(0)
-
-const handleButton = ()=>{
-  console.log(attrs)
-  attrs.onTest()
-}
 </script>
 
 <template>
-    <button type="button" @click="handleButton">attr: {{ $attrs }}</button>
+  <h1>{{ msg }}</h1>
+
+  <div class="card">
+    <button type="button" @click="count++">count is {{ count }}</button>
+    <p>
+      Edit
+      <code>components/HelloWorld.vue</code> to test HMR
+    </p>
+  </div>
+
+  <p>
+    Check out
+    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
+    >create-vue</a
+    >, the official Vue + Vite starter
+  </p>
+  <p>
+    Install
+    <a href="https://github.com/vuejs/language-tools" target="_blank">Volar</a>
+    in your IDE for a better DX
+  </p>
+  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
 </template>
 
 <style scoped>
+.read-the-docs {
+  color: #888;
+}
 </style>
